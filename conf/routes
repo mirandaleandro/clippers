@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET         /health                           controllers.AppController.healthCheck()
+
+POST        /add/page                         controllers.ProjectController.addPage()
+OPTIONS     /add/page                         controllers.AppController.options
+
+POST        /add/project                      controllers.ProjectController.addProject()
+OPTIONS     /add/project                      controllers.AppController.options
+
+GET         /get/project/:projectId           controllers.ProjectController.getProject(projectId:String)
+OPTIONS     /get/project           controllers.AppController.options
+
+# Map the JS resource paths
+GET        /*file                            controllers.Assets.versioned(path="/public", file: Asset)
